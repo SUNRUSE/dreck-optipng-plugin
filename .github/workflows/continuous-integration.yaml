@@ -16,7 +16,7 @@ jobs:
     - uses: actions/checkout@v3
       with:
         submodules: true
-    - run: apt-get install optipng --yes
+    - run: sudo apt-get install optipng --yes
       if: runner.os == 'Linux'
     - run: brew install optipng
       if: runner.os == 'macOS'
