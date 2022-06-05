@@ -1,0 +1,1 @@
+./plugins/optipng/generated/plugins/other-plugin/generated/example.png

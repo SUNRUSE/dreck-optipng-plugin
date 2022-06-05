@@ -1,0 +1,3 @@
+DRECK_OPTIPNG_OUTPUT_PNG_PATHS += $(patsubst ./%.png, ./plugins/optipng/generated/%.png, $(DRECK_OPTIPNG_INPUT_PNG_PATHS))
+
+DRECK_GENERATED_PATHS += $(DRECK_OPTIPNG_OUTPUT_PNG_PATHS)
