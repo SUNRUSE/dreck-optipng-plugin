@@ -26,6 +26,37 @@ If you need to run tests, install Imagemagick:
 sudo apt-get install imagemagick --yes
 ```
 
+### Installing within GitHub Actions
+
+Add appropriate action steps to install OptiPNG **before** the `make` action step:
+
+```yml
+name: Continuous Integration
+on: [push, pull_request]
+jobs:
+  main:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: true
+
+    # Insert this block:
+    ###############################
+    - run: sudo apt-get install optipng --yes
+      if: runner.os == 'Linux'
+    - run: brew install optipng
+      if: runner.os == 'macOS'
+    ###############################
+
+    - run: make --file ./submodules/dreck/makefile
+      shell: bash
+    - if: github.event_name == 'release' && github.event.action == 'created'
+      uses: softprops/action-gh-release@v1
+      with:
+        files: dist/**
+```
+
 ## Installation
 
 Run the following in a Bash shell at the root of your project:
