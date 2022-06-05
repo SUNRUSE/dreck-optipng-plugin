@@ -36,10 +36,10 @@ git submodule add https://github.com/sunruse/dreck-optipng-plugin plugins/optipn
 
 ## Input
 
-This plugin compresses each PNG file in the `DRECK_PNG_INPUT_PNG_PATHS` Make variable.
+This plugin compresses each PNG file in the `DRECK_DATA_URI_INPUT_PNG_PATHS` Make variable.
 
 ## Output
 
-This plugin writes an equivalent PNG document for each input PNG template.  For example, if `DRECK_PNG_INPUT_PNG_PATHS` contained `./a/b-c.png`, `./plugins/optipng/generated/a/b-c.png` would be written to disk.
+This plugin writes an equivalent PNG document for each input PNG template.  For example, if `DRECK_DATA_URI_INPUT_PNG_PATHS` contained `./a/b-c.png`, `./plugins/optipng/generated/a/b-c.png` would be written to disk.
 
-Their paths are listed in the `DRECK_PNG_OUTPUT_PNG_PATHS` Make variable, space separated.
+Their paths are listed in the `DRECK_DATA_URI_OUTPUT_PNG_PATHS` Make variable, space separated.
